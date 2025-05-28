@@ -4,7 +4,11 @@
  * Tipo de Clase: Java
  */
 
-package servicios;
+package com.patrones.demo.servicios;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

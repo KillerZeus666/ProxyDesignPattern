@@ -1,34 +1,22 @@
-/*
- * Asignatura: Patrones de Diseño de Software 
- * Patrón Estructural - > Proxy
- * Tipo de Clase: Main()
- */
-
 package com.patrones.demo.patronproxy;
 
 import com.patrones.demo.implementacion.FabricaServicios;
 import com.patrones.demo.implementacion.InterfaceProcesos;
 
-/**
- *
- * @author Fabrizio Bolaño
- */
 public class PatronProxyMain {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        
         String usuario = "fbolano";
-        String password = "8877";
+        String password = "pds";
         int proceso = 1;
-        InterfaceProcesos ProcesoActivo = FabricaServicios.CrearEjecucionProceso(); 
+
+         // false para decir que quiero sin auditoría
+        boolean auditable = true;
+
+        InterfaceProcesos procesoActivo = FabricaServicios.CrearEjecucionProceso(auditable);
         try {
-            ProcesoActivo.EjecutarProcesos(proceso, usuario, password);
+            procesoActivo.EjecutarProcesos(proceso, usuario, password);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-    
 }

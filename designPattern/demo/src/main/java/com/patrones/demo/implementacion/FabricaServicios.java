@@ -9,8 +9,11 @@ package com.patrones.demo.implementacion;
  *
  * @author Fabrizio Bolaño
  */
-public class FabricaServicios {
-     public static InterfaceProcesos CrearEjecucionProceso(){
-        return new ProxyProcesos();
+public class FabricaServicios {public static InterfaceProcesos CrearEjecucionProceso(boolean auditable) {
+        if (auditable) {
+            return new ProxyProcesos(); // Con auditoría
+        } else {
+            return new ProxySinAuditoria(); // Sin auditoría
+        }
     }
 }
