@@ -13,7 +13,7 @@ public class FabricaServicios {public static InterfaceProcesos CrearEjecucionPro
         if (auditable) {
             return new ProxyProcesos(); // Con auditoría
         } else {
-            return new ProxySinAuditoria(); // Sin auditoría
+            return new ProxyAutenticacion(); // Sin auditoría
         }
     }
 }
